@@ -8,7 +8,16 @@ NumpadIns::
 Return
 
 NumpadEnd::
-   Send, Num pad 1{enter}
+   BreakLoop = 0
+   Send {w down}
+   loop {
+     if (BreakLoop = 1)
+       break
+     MouseMove, 20, 30, 50, R
+     Sleep, 5000
+     Sleep, 5000
+     Sleep, 5000
+    }
 Return
 NumpadDown::
    Send, Num pad 2{enter}
@@ -22,32 +31,47 @@ NumpadLeft::
   BreakLoop = 0
   loop {
     if (BreakLoop = 1)
-      break 
+      break
     MouseClick, left, 1100, 700
     Sleep, 1025
-    MouseClick, left, 1250, 880  
+    MouseClick, left, 1250, 880
     Sleep, 1025
    }
 Return
- 
+
 NumpadClear::
   BreakLoop = 0
   loop 1000 {
     if (BreakLoop = 1)
-      break 
+      break
     MouseClick, left, 1100, 700
     Sleep, 2100
-    MouseClick, left, 1290, 885  
+    MouseClick, left, 1290, 885
     Sleep, 250
    }
 Return
 
 NumpadRight::
    BreakLoop = 1
+   Send {w up}
 Return
 
 NumpadHome::
-   Send, Num pad 7{enter}
+   Send, Reiss
+   Send %A_Tab%
+   Send, Edler
+   Send %A_Tab%
+   Send %A_Tab%
+   Send {Down 15}
+   Send %A_Tab%
+   Send {Down 3}
+   Send %A_Tab%
+   Send {Down 14}
+   Send %A_Tab%
+   Send %A_Tab%
+   Send, {enter}
+   Sleep, 400
+   Send, Blackbeard3{enter}
 Return
 
 NumpadUp::
